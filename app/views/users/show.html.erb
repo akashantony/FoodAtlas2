@@ -3,7 +3,7 @@
   <h3> <%= @user.username %></h3>
   <br>
   <li><%= link_to "Add Restaurant Info", new_restaurant_path %></li>
-  <% if @user.restaurants.count >= 1 %>
+  <% if @user.created_restaurants.count >= 1 %>
   </br>
   <ul>
     <% @user.created_restaurants.each do |restaurant|%>
