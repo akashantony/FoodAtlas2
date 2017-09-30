@@ -1,0 +1,12 @@
+<div class='row'>
+  <ul>
+    <% @restaurants.each do |restaurant|%>
+    <%if logged_in?%>
+      <a href="/restaurants/<%=restaurant.id%>"><li> <%=restaurant.name%></li></a>
+      <b>The dish to try: <%=restaurant.cuisine%></b>
+      <%else%>
+      <li> <%=restaurant.name%></li></a>
+      <b>The dish to try: <%=restaurant.cuisine%></b>
+      <%end%>
+    <% end %>
+</div>

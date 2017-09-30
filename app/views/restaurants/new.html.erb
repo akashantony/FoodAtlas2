@@ -1,0 +1,30 @@
+<p> Add Restaurant Details </p>
+<%= form_for :restaurant, url: {action: "create"} do |f| %>
+
+<% if @restaurant.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+  <br>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+  <br>
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude %>
+  <br>
+  <%= f.label :latitude %>
+  <%= f.text_area :latitude %>
+
+  <%= f.submit %>
+<% end %>

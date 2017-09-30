@@ -1,0 +1,7 @@
+<div>
+  <h2><%= @restaurant.name %></h2>
+  <p>Cuisine: <%= @restaurant.cuisine %></p>
+  <% if @restaurant.creator_id == current_user.id %>
+  <%= link_to "Edit This Restaurant", edit_restaurant_path(@restaurant) %>
+  <%end%>
+</div>

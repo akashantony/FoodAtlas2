@@ -1,0 +1,20 @@
+<div>
+  <h2>Welcome, </h2>
+  <h3> <%= @user.username %></h3>
+  <br>
+  <li><%= link_to "Add Restaurant Info", new_restaurant_path %></li>
+  <% if @user.restaurants.count >= 1 %>
+  </br>
+  <ul>
+    <% @user.created_restaurants.each do |restaurant|%>
+      <li>
+        <%=restaurant.name%>  </li>
+        <li><%=restaurant.cuisine%></li>
+      </ul>
+        <br>
+          <p><%= link_to "Edit Restaurant Info", restaurant_path(restaurant.id) %></p>
+          <p><%= link_to "Delete Restaurant from list", restaurant_path(restaurant.id), method: :delete %></p>
+        </br>
+    <% end %>
+  <% end %>
+</div>
