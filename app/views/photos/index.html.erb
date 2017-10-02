@@ -1,5 +1,10 @@
-this is the home page !!!
-this is where the map will get displayed
-this is where all the photos have to render on the map as icons.
-when you click the icons it shares details.
-  
+<h1> Food Atlas <h1>
+
+<br>
+<div class="page-header"><h2>Photos</h2></div>
+</br>
+
+<% @photos.each do |photo| %>
+<br><%= render photo %></br>
+<p><%= link_to "Delete food from list", delete_pic_path(photo), method: :delete %></p>
+<%end%>
