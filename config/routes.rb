@@ -4,12 +4,14 @@ Rails.application.routes.draw do
     post '/sessions', to:'sessions#create'
     delete '/sessions', to:'sessions#destroy', as: "logout"
 
-
     get '/users/new', to: 'users#new', as: "sign_up"
     post '/users', to: 'users#create'
     get '/users/:id', to: 'users#show', as: "user_profile"
 
-    resources :restaurants
+    delete '/photos/:id/delete', to: 'photos#destroy', as: "delete_pic"
+    resources :restaurants do
+      resources :photos
+    end
 
     root 'photos#index'
 end

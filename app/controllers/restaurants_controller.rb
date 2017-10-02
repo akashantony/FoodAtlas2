@@ -4,6 +4,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @photo = Photo.new
     @restaurant = Restaurant.find_by(id: params[:id])
   end
 

@@ -5,3 +5,12 @@
   <%= link_to "Edit This Restaurant", edit_restaurant_path(@restaurant) %>
   <%end%>
 </div>
+
+<%=form_for [@restaurant, @photo] do |f| %>
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions"><%= submit_tag "upload" %></div>
+  <%end%>
+</div>

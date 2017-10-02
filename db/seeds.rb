@@ -30,11 +30,3 @@ end
 10.times do
   Restaurant.create(restaurants_params)
 end
-
-
-10.times do
-  Photo.create({
-    user_id: User.all.sample.id,
-    restaurant_id: Restaurant.all.sample.id
-  })
-end
